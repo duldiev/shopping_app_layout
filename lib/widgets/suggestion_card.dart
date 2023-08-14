@@ -51,10 +51,12 @@ class SuggestionCard extends StatelessWidget {
             child: Text(
               AppTexts.suggestions[index],
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.white,
               ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

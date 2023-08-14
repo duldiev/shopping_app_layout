@@ -10,7 +10,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      scrolledUnderElevation: 0,
+      scrolledUnderElevation: 0.3,
       elevation: 0,
       backgroundColor: AppColors.background,
       leading: Padding(
@@ -24,7 +24,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 height: 12.w,
               ),
             ),
-            Gap(2.w),
+            Gap(3.w),
             RichText(
               text: TextSpan(
                 text: 'Hello,',

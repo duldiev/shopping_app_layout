@@ -7,4 +7,14 @@ class AssetsName {
         '5.jpg',
         '6.jpg',
       ];
+
+  static List<String?> get categories1 => [
+        'c1.png',
+        null,
+      ];
+
+  static List<String> get categories2 => [
+        'c2.png',
+        'c3.png',
+      ];
 }

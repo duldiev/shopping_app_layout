@@ -1,11 +1,15 @@
+// ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:shopping_app_layout/shared/app_colors.dart';
-import 'package:shopping_app_layout/shared/assets_name.dart';
+import 'package:shopping_app_layout/views/category_view.dart';
+import 'package:shopping_app_layout/views/suggestion_view.dart';
+import 'package:shopping_app_layout/widgets/header_see_all.dart';
 import 'package:shopping_app_layout/widgets/home_app_bar.dart';
-import 'package:shopping_app_layout/widgets/suggestion_card.dart';
+import 'package:shopping_app_layout/widgets/nav_bar_item.dart';
+import 'package:shopping_app_layout/widgets/search_engine.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,45 +26,64 @@ class HomeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Gap(2.h),
-              SizedBox(
-                height: 100,
-                width: 100.w,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
-                  itemBuilder: (context, index) => SuggestionCard(
-                    index: index,
-                    imageName: AssetsName.images[index],
-                  ),
-                  separatorBuilder: (context, index) => Gap(2.w),
-                  itemCount: 6,
-                ),
+              const SuggestionView(),
+              Gap(2.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: const SearchEngine(),
+              ),
+              Gap(3.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: const HeaderSeeAll(),
               ),
               Gap(2.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: SearchBar(
-                  hintText: 'Search',
-                  leading: Icon(
-                    FontAwesomeIcons.search,
-                    color: AppColors.secondary,
-                    size: 20,
-                  ),
-                  hintStyle: MaterialStatePropertyAll(
-                    TextStyle(
-                      fontSize: 16,
-                      color: AppColors.secondary,
-                    ),
-                  ),
-                  constraints: BoxConstraints.tight(Size.fromHeight(5.h)),
-                  padding: MaterialStatePropertyAll(
-                    EdgeInsets.symmetric(
-                      horizontal: 4.w,
-                      vertical: 0,
-                    ),
-                  ),
-                  backgroundColor: MaterialStatePropertyAll(AppColors.light),
-                  elevation: const MaterialStatePropertyAll(0),
+                child: const CategoryView(),
+              ),
+              Gap(2.h),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: AppColors.background,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.dark.withOpacity(0.2),
+              spreadRadius: 10,
+              blurRadius: 10,
+              offset: Offset(0, 14),
+            ),
+          ],
+        ),
+        child: const SafeArea(
+          child: Row(
+            children: [
+              Expanded(
+                child: NavBarItem(
+                  icon: FontAwesomeIcons.home,
+                  selected: true,
+                ),
+              ),
+              Expanded(
+                child: NavBarItem(
+                  icon: FontAwesomeIcons.couch,
+                  selected: false,
+                ),
+              ),
+              Expanded(
+                child: NavBarItem(
+                  icon: FontAwesomeIcons.shoppingBag,
+                  selected: false,
+                ),
+              ),
+              Expanded(
+                child: NavBarItem(
+                  icon: FontAwesomeIcons.solidHeart,
+                  selected: false,
                 ),
               ),
             ],

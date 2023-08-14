@@ -18,6 +18,12 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.background,
           fontFamily: 'Classic-Grotesque',
+          primaryColor: AppColors.dark,
+          dividerColor: AppColors.secondary,
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: AppColors.dark,
+            selectionColor: AppColors.dark.withOpacity(0.4),
+          ),
         ),
         home: const HomeScreen(),
       ),

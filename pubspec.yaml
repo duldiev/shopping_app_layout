@@ -1,0 +1,33 @@
+name: shopping_app_layout
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  font_awesome_flutter: ^10.5.0
+  gap: ^3.0.1
+  responsive_sizer: ^3.2.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Classic-Grotesque
+      fonts:
+        - asset: assets/fonts/Classic-Grotesque-Bold.ttf
+        - asset: assets/fonts/Classic-Grotesque-Regular.ttf

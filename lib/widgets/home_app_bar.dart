@@ -13,6 +13,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0.3,
       elevation: 0,
       backgroundColor: AppColors.background,
+      toolbarHeight: 10.h,
       leading: Padding(
         padding: EdgeInsets.only(left: 4.w),
         child: Row(
@@ -22,6 +23,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 'assets/images/avatar.jpeg',
                 width: 12.w,
                 height: 12.w,
+                fit: BoxFit.cover,
               ),
             ),
             Gap(3.w),

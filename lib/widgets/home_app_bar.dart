@@ -13,7 +13,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0.3,
       elevation: 0,
       backgroundColor: AppColors.background,
-      toolbarHeight: 10.h,
+      toolbarHeight: 8.h,
       leading: Padding(
         padding: EdgeInsets.only(left: 4.w),
         child: Row(
@@ -52,16 +52,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         Transform.scale(
-          scale: 0.7,
+          scale: 0.6,
           alignment: Alignment.centerRight,
           child: Container(
             height: 2.h,
-            width: 26.w,
+            width: 30.w,
             alignment: Alignment.center,
             margin: EdgeInsets.only(right: 4.w),
             decoration: BoxDecoration(
               color: AppColors.dark,
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(50),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -70,7 +70,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Text(
                   '4',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 30,
                     color: AppColors.background,
                     fontWeight: FontWeight.w400,
                   ),
